@@ -13,13 +13,20 @@ if(navToggle){
 
 /*===== MENU HIDDEN =====*/
 /* Validate if constant exists */
+
+const hideMenu = () => {
+  navMenu.classList.remove('show-menu');
+}
+
 if(navClose){
   navClose.addEventListener('click', () => {
-    navMenu.classList.remove('show-menu')
+    hideMenu();
   })
 }
 
 /*==================== REMOVE MENU MOBILE ====================*/
+const navLink = document.querySelectorAll('.nav__link');
+navLink.forEach(item => item.addEventListener('click', hideMenu))
 
 
 /*==================== ACCORDION SKILLS ====================*/
