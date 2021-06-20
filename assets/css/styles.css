@@ -588,6 +588,7 @@ img {
 .qualification__icon{
   font-size: 1.8rem;
   margin-bottom: var(--mb-0-25);
+  margin-right: var(--mb-0-75);
 }
 
 .qualification__data{
@@ -635,8 +636,12 @@ img {
   display: none;
 }
 
-.qualification__active [data-content]{
+.qualification__active[data-content]{
   display: block;
+}
+
+.qualification__button.qualification__active{
+  color: var(--first-color);
 }
 
 /*==================== SERVICES ====================*/
