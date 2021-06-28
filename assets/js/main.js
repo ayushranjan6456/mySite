@@ -125,6 +125,7 @@ function scrollUp(){
 window.addEventListener('scroll', scrollUp)
 
 /*==================== DARK LIGHT THEME ====================*/ 
+
 const themeButton = document.getElementById('theme-button')
 const darkTheme = 'dark-theme'
 const iconTheme = 'fa-sun'
@@ -142,6 +143,16 @@ if (selectedTheme) {
   // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
   document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
   themeButton.classList[selectedIcon === 'fa-moon' ? 'add' : 'remove'](iconTheme)
+}
+
+//System default
+const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
+if (darkThemeMq.matches) {
+  document.body.classList['add'](darkTheme)
+  themeButton.classList['add'](iconTheme)
+} else {
+  document.body.classList['remove'](darkTheme)
+  themeButton.classList['remove'](iconTheme)
 }
 
 // Activate / deactivate the theme manually with the button
